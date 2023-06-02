@@ -8,6 +8,13 @@ const routes = [
         meta: {
             title: '登录页'
         }
+    },
+    {
+        path: '/console',
+        component: defineAsyncComponent(() => import('../views/console/index.vue')),
+        meta: {
+            title: '首页'
+        }
     }
 ]
 const router = createRouter({
