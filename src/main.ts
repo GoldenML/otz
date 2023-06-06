@@ -6,6 +6,6 @@ import './assets/css/index.scss'
 import router from './router/router.ts'
 import App from './App.vue'
 
-
 // @ts-ignore
-createApp(App).use(router).use(ElementPlus).mount('#app')
+const app = createApp(App)
+app.use(router).use(ElementPlus).mount('#app')

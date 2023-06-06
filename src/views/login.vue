@@ -56,9 +56,6 @@ onBeforeUpdate(() => {
 onUpdated(() => {
 
 })
-on(() => {
-
-})
 
 const props = defineProps<{
   list: number[]

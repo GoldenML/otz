@@ -1,31 +1,41 @@
 <template>
-  <div class="layout-container">
+  <div class="chats">
     <div class="sidebar">
-      <Menu></Menu>
+      <FriendList />
     </div>
     <div class="content">
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+      <router-view></router-view>
     </div>
   </div>
+
 </template>
 <script setup lang="ts">
-import Menu from './Menu.vue'
+import FriendList from "./FriendList.vue";
 </script>
 <style lang="scss" scoped>
+.card{
+  background-color: #60afcc;
+  display: flex;
+  height: 100vh;
+}
+.chats{
+  display: flex;
+  height: 100%;
+}
 .layout-container {
   display: flex;
   height: 100vh;
 }
 
 .sidebar {
-  width: 62px;
+  height: 100%;
+  width: 250px;
   background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
 }
 .content {
   flex: 1;
+  padding: 20px;
 }
 </style>

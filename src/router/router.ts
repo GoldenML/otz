@@ -10,11 +10,45 @@ const routes = [
         }
     },
     {
+        name: 'console',
         path: '/console',
         component: defineAsyncComponent(() => import('../views/console/index.vue')),
         meta: {
             title: '首页'
-        }
+        },
+        redirect: '/console/chats',
+        children: [
+            {
+                name: 'chats',
+                path: '/console/chats',
+                component: defineAsyncComponent(() => import('../views/console/chats/index.vue')),
+                meta: {
+                    title: '聊天'
+                },
+                children: [
+                    {
+                        path: '/console/chats/:id',
+                        component: defineAsyncComponent(() => import('../views/console/chats/chat-modal/index.vue')),
+                    }
+                ]
+            },
+            {
+                name: 'contacts',
+                path: '/console/contacts',
+                component: defineAsyncComponent(() => import('../views/console/contacts/index.vue')),
+                meta: {
+                    title: '通讯录'
+                },
+            },
+            {
+                name: 'settings',
+                path: '/console/settings',
+                component: defineAsyncComponent(() => import('../views/console/settings/index.vue')),
+                meta: {
+                    title: '设置'
+                },
+            }
+        ]
     }
 ]
 const router = createRouter({
